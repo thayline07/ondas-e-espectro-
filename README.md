@@ -31,9 +31,9 @@ pip install numpy matplotlib scipy
 
 Cada exercício possui seu próprio arquivo Python.
 Exemplo:
-´´´bash
+```bash
 python exercicio1.py
-´´´
+```
 
 Consulte a seção correspondente abaixo para saber o objetivo de cada exercício e como executá-lo.
 
