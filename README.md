@@ -92,6 +92,8 @@ Reproduzir a Figura 6 em Python utilizando duas ondas com $T_1=8s$ e $T_2=9s$. E
 
 Antes de executar cada caso, deve ser calculado o período de batimento $T_{bat}$ e utilizada essa informação para prever a quantidade de ondas em cada grupo.
 
+Além disso, medir numericamente a velocidade de propagação da envoltória do grupo e compará-la com a velocidade de grupo $cg$, calculada por diferenças finitas.
+
 #### Como funciona
 
 O programa calcula a frequência angular de cada onda a partir do seu período:
@@ -100,7 +102,7 @@ $$
 \omega = \frac{2\pi}{T}. 
 $$
 
-As ondas são então representadas por funções cossenoidais:
+As ondas são então representadas por funções:
 
 $$
 \eta(t)=\cos(\omega t)
@@ -113,6 +115,16 @@ $$
 $$
 
 A envoltória do grupo também é calculada e apresentada no gráfico por meio de curvas tracejadas. A comparação entre os diferentes valores de $T_2$ permite observar como a diferença entre os períodos das ondas altera o período de batimento e, consequentemente, o tamanho dos grupos.
+
+Para determinar a velocidade da envoltória, são identificados numericamente os máximos da envoltória em dois instantes diferentes. A velocidade é então obtida pela razão entre a variação da posição do máximo e a variação do tempo:
+
+$$ cg,num=(x2-x1)/(t2-t1). $$
+
+Por fim, a velocidade de grupo é calculada por uma diferença finita da relação de dispersão:
+
+$$ cg≈(\omega(k+h)-\omega(k))/h, $$
+
+permitindo comparar o valor teórico com a velocidade medida diretamente no gráfico.
 
 ### Exercício 4 — Espectro JONSWAP
 
