@@ -82,9 +82,9 @@ Descrição do exercício e instruções de execução.
 
 #### Objetivo
 
-Reproduzir a Figura 6 em Python utilizando duas ondas com \(T_1=8\,s\) e \(T_2=9\,s\). Em seguida, analisar o comportamento dos grupos de ondas alterando \(T_2\) para \(8,2\,s\) e \(10\,s\).
+Reproduzir a Figura 6 em Python utilizando duas ondas com $T_1=8s$ e $T_2=9s$. Em seguida, analisar o comportamento dos grupos de ondas alterando $T_2$ para $8,2s$ e $10s$.
 
-Antes de executar cada caso, deve ser calculado o período de batimento \(T_{bat}\) e utilizada essa informação para prever a quantidade de ondas em cada grupo.
+Antes de executar cada caso, deve ser calculado o período de batimento $T_{bat}$ e utilizada essa informação para prever a quantidade de ondas em cada grupo.
 
 #### Como funciona
 
