@@ -56,13 +56,13 @@ $$
 k = \frac{2\pi}{L} 
 $$
 
-e um novo valor de \(L\) é obtido a partir de
+e um novo valor de $L$ é obtido a partir de
 
 $$ 
 L = \frac{gT^2}{2\pi}\tanh(kd). 
 $$
 
-Depois de determinar \(L\), a velocidade de fase é calculada por
+Depois de determinar $L$, a velocidade de fase é calculada por
 
 $$
 c = \frac{L}{T}.
@@ -74,7 +74,13 @@ Por fim, o programa calcula esses valores para diferentes períodos e profundida
 
 ### Exercício 2 — Onda simples
 
-Descrição do exercício e instruções de execução.
+#### Objetivo
+
+Visualizar a propagação de uma onda simples e verificar que sua velocidade de propagação é dada por $c=\omega/k$.
+
+#### Como funciona
+
+O código define uma onda a partir de sua amplitude, período e comprimento de onda. Em seguida, utiliza **FuncAnimation** para atualizar a onda para diferentes valores de tempo, criando uma animação que permite observar seu deslocamento ao longo do eixo $x$. A velocidade teórica é calculada por $c=\omega/k$ e comparada com o deslocamento observado na animação.
 
 ---
 
