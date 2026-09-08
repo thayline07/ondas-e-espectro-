@@ -97,6 +97,10 @@ Execute o arquivo correspondente ao exercício:
 
 ```bash
 python exercicio1.py
+```
+
+Para testar os diferentes casos, altere o valor de T2 no código e ajuste
+a janela de tempo do gráfico quando necessário.
 
 ### Exercício 2 — Onda simples
 
