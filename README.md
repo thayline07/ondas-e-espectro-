@@ -42,7 +42,7 @@ Consulte a seção correspondente abaixo para saber o objetivo de cada exercíci
 
 #### Objetivo
 
-Implementar uma função que determine o comprimento de onda \(L\) a partir do período \(T\) e da profundidade \(d\), resolvendo numericamente a relação de dispersão.
+Implementar uma função que determine o comprimento de onda $L$ a partir do período $T$ e da profundidade $d$, resolvendo numericamente a relação de dispersão.
 
 Também são analisados diferentes valores de profundidade para verificar o comportamento do comprimento de onda e da velocidade de fase, reproduzindo a Figura 4 do material.
 
@@ -68,7 +68,7 @@ $$
 c = \frac{L}{T}.
 $$
 
-Por fim, o programa calcula esses valores para diferentes períodos e profundidades e gera os gráficos de \(c\) e \(L\) em função de \(T\).
+Por fim, o programa calcula esses valores para diferentes períodos e profundidades e gera os gráficos de $c$ e $L$ em função de $T$.
 
 ---
 
@@ -106,7 +106,7 @@ $$
 \eta_{\mathrm{soma}}=\eta_1+\eta_2.
 $$
 
-A envoltória do grupo também é calculada e apresentada no gráfico por meio de curvas tracejadas. A comparação entre os diferentes valores de \(T_2\) permite observar como a diferença entre os períodos das ondas altera o período de batimento e, consequentemente, o tamanho dos grupos.
+A envoltória do grupo também é calculada e apresentada no gráfico por meio de curvas tracejadas. A comparação entre os diferentes valores de $T_2$ permite observar como a diferença entre os períodos das ondas altera o período de batimento e, consequentemente, o tamanho dos grupos.
 
 ### Exercício 4 — Espectro JONSWAP
 
