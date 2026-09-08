@@ -53,19 +53,19 @@ A função `comprimento_de_onda(T, d)` começa com uma estimativa inicial para o
 A cada iteração, o número de onda é calculado por
 
 $$ 
-\k = \frac{2\pi}{L} 
+k = \frac{2\pi}{L} 
 $$
 
 e um novo valor de \(L\) é obtido a partir de
 
 $$ 
-\L = \frac{gT^2}{2\pi}\tanh(kd). 
+L = \frac{gT^2}{2\pi}\tanh(kd). 
 $$
 
 Depois de determinar \(L\), a velocidade de fase é calculada por
 
 $$
-\c = \frac{L}{T}.
+c = \frac{L}{T}.
 $$
 
 Por fim, o programa calcula esses valores para diferentes períodos e profundidades e gera os gráficos de \(c\) e \(L\) em função de \(T\).
@@ -90,18 +90,21 @@ Antes de executar cada caso, deve ser calculado o período de batimento \(T_{bat
 
 O programa calcula a frequência angular de cada onda a partir do seu período:
 
-\[ \omega = \frac{2\pi}{T}. \]
+$$
+\omega = \frac{2\pi}{T}. 
+$$
 
 As ondas são então representadas por funções cossenoidais:
 
-\[ \eta(t)=\cos(\omega t)
-\]
+$$
+\eta(t)=\cos(\omega t)
+$$
 
 e somadas para observar a formação dos grupos:
 
-\[
+$$
 \eta_{\mathrm{soma}}=\eta_1+\eta_2.
-\]
+$$
 
 A envoltória do grupo também é calculada e apresentada no gráfico por meio de curvas tracejadas. A comparação entre os diferentes valores de \(T_2\) permite observar como a diferença entre os períodos das ondas altera o período de batimento e, consequentemente, o tamanho dos grupos.
 
