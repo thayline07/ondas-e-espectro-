@@ -39,76 +39,74 @@ Consulte a seção correspondente abaixo para saber o objetivo de cada exercíci
 
 ## 📚 Exercícios
 ### Exercício 1 — Relação de dispersão
+
 #### Objetivo
 
-Reproduzir a Figura 6 do material em Python utilizando duas ondas com períodos
-`T1 = 8 s` e `T2 = 9 s`.
+Implementar uma função que determine o comprimento de onda \(L\) a partir do período \(T\) e da profundidade \(d\), resolvendo numericamente a relação de dispersão.
 
-Em seguida, o período `T2` deve ser alterado para `8,2 s` e `10 s`,
-comparando o comportamento dos grupos de ondas em cada caso.
+Também são analisados diferentes valores de profundidade para verificar o comportamento do comprimento de onda e da velocidade de fase, reproduzindo a Figura 4 do material.
 
 #### Como funciona
 
-O código calcula a frequência angular de cada onda a partir de:
+A função `comprimento_de_onda(T, d)` começa com uma estimativa inicial para o comprimento de onda e, por meio de iterações, atualiza esse valor utilizando a relação de dispersão.
+
+A cada iteração, o número de onda é calculado por
 
 \[
-\omega = \frac{2\pi}{T}
+k = \frac{2\pi}{L}
 \]
 
-e gera as ondas utilizando:
+e um novo valor de \(L\) é obtido a partir de
 
 \[
-\eta(t) = \cos(\omega t)
+L = \frac{gT^2}{2\pi}\tanh(kd).
 \]
 
-As ondas são então somadas para observar a formação dos grupos:
+Depois de determinar \(L\), a velocidade de fase é calculada por
 
 \[
-\eta_{\text{soma}} = \eta_1 + \eta_2
+c = \frac{L}{T}.
 \]
 
-Também é calculada a envoltória do grupo, representada pelas curvas
-tracejadas no gráfico.
+Por fim, o programa calcula esses valores para diferentes períodos e profundidades e gera os gráficos de \(c\) e \(L\) em função de \(T\).
 
-#### Período de batimento
-
-Antes de executar cada caso, deve ser calculado o período de batimento
-`Tbat` pela equação (11) do material:
-
-\[
-T_{bat} = \frac{1}{|f_1-f_2|}
-\]
-
-A partir de `Tbat`, é possível estimar quantas ondas individuais existem
-aproximadamente em cada grupo.
-
-Os três casos analisados são:
-
-- `T1 = 8 s` e `T2 = 9 s`
-- `T1 = 8 s` e `T2 = 8,2 s`
-- `T1 = 8 s` e `T2 = 10 s`
-
-O último caso exige uma alteração na janela de tempo do gráfico para que
-os grupos possam ser visualizados adequadamente.
-
-#### Execução
-
-Execute o arquivo correspondente ao exercício:
-
-```bash
-python exercicio1.py
-```
-
-Para testar os diferentes casos, altere o valor de T2 no código e ajuste
-a janela de tempo do gráfico quando necessário.
+---
 
 ### Exercício 2 — Onda simples
 
 Descrição do exercício e instruções de execução.
 
+---
+
 ### Exercício 3 — Grupos de ondas
 
-Descrição do exercício e instruções de execução.
+#### Objetivo
+
+Reproduzir a Figura 6 em Python utilizando duas ondas com \(T_1=8\,s\) e \(T_2=9\,s\). Em seguida, analisar o comportamento dos grupos de ondas alterando \(T_2\) para \(8,2\,s\) e \(10\,s\).
+
+Antes de executar cada caso, deve ser calculado o período de batimento \(T_{bat}\) e utilizada essa informação para prever a quantidade de ondas em cada grupo.
+
+#### Como funciona
+
+O programa calcula a frequência angular de cada onda a partir do seu período:
+
+\[
+\omega = \frac{2\pi}{T}.
+\]
+
+As ondas são então representadas por funções cossenoidais:
+
+\[
+\eta(t)=\cos(\omega t)
+\]
+
+e somadas para observar a formação dos grupos:
+
+\[
+\eta_{\mathrm{soma}}=\eta_1+\eta_2.
+\]
+
+A envoltória do grupo também é calculada e apresentada no gráfico por meio de curvas tracejadas. A comparação entre os diferentes valores de \(T_2\) permite observar como a diferença entre os períodos das ondas altera o período de batimento e, consequentemente, o tamanho dos grupos.
 
 ### Exercício 4 — Espectro JONSWAP
 
