@@ -114,8 +114,6 @@ $$
 \eta_{\mathrm{soma}}=\eta_1+\eta_2.
 $$
 
-A envoltória do grupo também é calculada e apresentada no gráfico por meio de curvas tracejadas. A comparação entre os diferentes valores de $T_2$ permite observar como a diferença entre os períodos das ondas altera o período de batimento e, consequentemente, o tamanho dos grupos.
-
 Para determinar a velocidade da envoltória, são identificados numericamente os máximos da envoltória em dois instantes diferentes. A velocidade é então obtida pela razão entre a variação da posição do máximo e a variação do tempo:
 
 $$ cg,num=(x2-x1)/(t2-t1). $$
