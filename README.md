@@ -198,9 +198,25 @@ distribuindo a energia do espectro JONSWAP de acordo com a direção de propaga�
 
 Por fim, a normalização é verificada numericamente, confirmando que a integração de $D(\theta)$ em todas as direções resulta em aproximadamente 1.
 
+---
+
 ### Exercício 8 — Espectro bimodal
 
-Descrição do exercício e instruções de execução.
+#### Objetivo
+
+Construir um espectro bimodal combinando uma vaga (wind sea) e um marulho (swell), com frequências e direções médias distintas, reproduzindo a Figura 14.
+
+#### Como funciona
+
+São gerados dois espectros JONSWAP, cada um com seu $H_s$, $T_p$, parâmetro de espalhamento $s$ e direção média $\theta_0$. Os espectros direcionais são calculados por
+
+$$
+E(f,\theta)=E(f)D(\theta)
+$$
+
+e então somados para obter o espectro bimodal total. São apresentados o espectro em frequência $E(f)$ e o espectro direcional $E(f,\theta)$ em coordenadas polares, evidenciando os dois sistemas de ondas. 
+
+---
 
 ## 👩‍💻 Autoria
 
