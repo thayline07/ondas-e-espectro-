@@ -219,3 +219,7 @@ e então somados para obter o espectro bimodal total. São apresentados o espect
 ## 👩‍💻 Autoria
 
 Projeto desenvolvido como parte das atividades de Iniciação Científica.
+
+
+### Link de Acesso
+[Link](https://colab.research.google.com/drive/1fo2GmT_gfch9AVAfYCbwwdRiIEseSgI_?usp=sharing)
