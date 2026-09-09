@@ -37,7 +37,7 @@ axs[2].set_xlabel("Tempo (s)")
 axs[2].set_ylabel("η1+η2")
 axs[2].set_yticks([])
 
-# Segunda parte: velocidade da envoltória e comparação com cg = dω/dk calculado por diferenças finitas. 
+# Velocidade da envoltória e comparação com cg = dω/dk calculado por diferenças finitas. 
 
 x = np.linspace(0, 1000, 1000)
 
