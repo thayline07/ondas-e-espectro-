@@ -56,13 +56,13 @@ $$
 k = \frac{2\pi}{L} 
 $$
 
-e um novo valor de \(L\) é obtido a partir de
+e um novo valor de $L$ é obtido a partir de
 
 $$ 
 L = \frac{gT^2}{2\pi}\tanh(kd). 
 $$
 
-Depois de determinar \(L\), a velocidade de fase é calculada por
+Depois de determinar $L$, a velocidade de fase é calculada por
 
 $$
 c = \frac{L}{T}.
@@ -74,7 +74,13 @@ Por fim, o programa calcula esses valores para diferentes períodos e profundida
 
 ### Exercício 2 — Onda simples
 
-Descrição do exercício e instruções de execução.
+#### Objetivo
+
+Visualizar a propagação de uma onda simples e verificar que sua velocidade de propagação é dada por $c=\omega/k$.
+
+#### Como funciona
+
+O código define uma onda a partir de sua amplitude, período e comprimento de onda. Em seguida, utiliza **FuncAnimation** para atualizar a onda para diferentes valores de tempo, criando uma animação que permite observar seu deslocamento ao longo do eixo $x$. A velocidade teórica é calculada por $c=\omega/k$ e comparada com o deslocamento observado na animação.
 
 ---
 
@@ -86,6 +92,8 @@ Reproduzir a Figura 6 em Python utilizando duas ondas com $T_1=8s$ e $T_2=9s$. E
 
 Antes de executar cada caso, deve ser calculado o período de batimento $T_{bat}$ e utilizada essa informação para prever a quantidade de ondas em cada grupo.
 
+Além disso, medir numericamente a velocidade de propagação da envoltória do grupo e compará-la com a velocidade de grupo $cg$, calculada por diferenças finitas.
+
 #### Como funciona
 
 O programa calcula a frequência angular de cada onda a partir do seu período:
@@ -94,7 +102,7 @@ $$
 \omega = \frac{2\pi}{T}. 
 $$
 
-As ondas são então representadas por funções cossenoidais:
+As ondas são então representadas por funções:
 
 $$
 \eta(t)=\cos(\omega t)
@@ -108,21 +116,87 @@ $$
 
 A envoltória do grupo também é calculada e apresentada no gráfico por meio de curvas tracejadas. A comparação entre os diferentes valores de $T_2$ permite observar como a diferença entre os períodos das ondas altera o período de batimento e, consequentemente, o tamanho dos grupos.
 
+Para determinar a velocidade da envoltória, são identificados numericamente os máximos da envoltória em dois instantes diferentes. A velocidade é então obtida pela razão entre a variação da posição do máximo e a variação do tempo:
+
+$$ cg,num=(x2-x1)/(t2-t1). $$
+
+Por fim, a velocidade de grupo é calculada por uma diferença finita da relação de dispersão:
+
+$$ cg≈(\omega(k+h)-\omega(k))/h, $$
+
+permitindo comparar o valor teórico com a velocidade medida diretamente no gráfico.
+
+---
+
 ### Exercício 4 — Espectro JONSWAP
 
-Descrição do exercício e instruções de execução.
+### Objetivo
+
+Implementar a fórmula (19) do espectro JONSWAP em Python, utilizando a normalização por $H_s$, e reproduzir a Figura 12. Em seguida, verificar numericamente se $4\sqrt{m_0}$ retorna o valor de $H_s$ definido.
+
+### Como funciona
+
+O programa calcula o espectro JONSWAP para diferentes valores de $\gamma$ e $T_p$, normalizando o espectro para o $H_s$ desejado. Os resultados são apresentados em dois gráficos, permitindo observar a influência desses parâmetros no espectro.
+
+Por fim, o momento espectral $m_0$ é calculado numericamente pela integração do espectro, e a altura significativa é obtida por:
+
+$$ H_s=4√m_0. $$
+
+O valor calculado é então comparado com o $H_s$ utilizado na normalização.
+
+---
 
 ### Exercício 5 — Momentos espectrais
 
-Descrição do exercício e instruções de execução.
+#### Objetivo
+
+Implementar uma função para calcular os principais momentos espectrais de um espectro JONSWAP e obter os parâmetros $H_s$, $T_p$, $T_{m01}$ e $T_{m02}$.
+
+#### Como funciona
+
+A função recebe o vetor de frequências $f$ e os valores do espectro $E$, calculando numericamente $m_0$, $m_1$ e $m_2$ por integração pelo método dos trapézios. A partir desses momentos, são calculados os parâmetros do estado do mar.
+
+Por fim, a função é testada utilizando um espectro JONSWAP com $H_s$ e $T_p$ conhecidos, verificando se os valores calculados correspondem aos utilizados na construção do espectro.
+
+---
 
 ### Exercício 6 — Síntese e análise de ondas
 
-Descrição do exercício e instruções de execução.
+#### Objetivo
+
+Gerar um sinal de elevação da superfície $\eta(t)$ a partir de um espectro JONSWAP com fases aleatórias e, em seguida, estimar novamente o espectro a partir do sinal utilizando o método de Welch.
+
+#### Como funciona
+
+O programa utiliza um espectro JONSWAP e gera um sinal no domínio do tempo por meio da superposição de várias componentes senoidais com fases aleatórias. A partir desse sinal, o espectro é estimado novamente utilizando *scipy.signal.welch*.
+
+Por fim, o espectro estimado é comparado com o espectro JONSWAP original, permitindo verificar se as características espectrais são preservadas durante o processo de síntese e análise. Este exercício completa o ciclo entre o espectro e o sinal no domínio do tempo.
+
+---
 
 ### Exercício 7 — Espalhamento direcional
 
-Descrição do exercício e instruções de execução.
+#### Objetivo
+
+Implementar a equação (21) para representar o espalhamento direcional das ondas e gerar o espectro direcional $E(f,\theta)$.
+
+#### Como funciona
+
+O programa calcula a função de espalhamento direcional
+
+$$ D(\theta)=A(s)\cos^{2s}\left(\frac{\theta-\theta_0}{2}\right), $$
+
+utilizando a normalização adequada para que
+
+$$ \int_0^{2\pi}D(\theta)\,d\theta=1. $$
+
+A partir dela, o espectro direcional é obtido por
+
+$$ E(f,\theta)=E(f)D(\theta), $$
+
+distribuindo a energia do espectro JONSWAP de acordo com a direção de propagação. O gráfico polar é utilizado para visualizar como a energia se concentra em torno da direção média $\theta_0$, de acordo com o parâmetro de espalhamento $s$.
+
+Por fim, a normalização é verificada numericamente, confirmando que a integração de $D(\theta)$ em todas as direções resulta em aproximadamente 1.
 
 ### Exercício 8 — Espectro bimodal
 
