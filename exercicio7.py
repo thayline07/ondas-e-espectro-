@@ -67,48 +67,28 @@ fp = f[indice_pico]
 E_fp = E[indice_pico]
 
 
-# -----------------------------
-# Gráficos
-# -----------------------------
-fig, axes = plt.subplots(
-    2, 2,
-    figsize=(10, 9),
-    subplot_kw={'projection': 'polar'}
-)
+# frequência de pico
+indice_pico = np.argmax(E)
+fp = f[indice_pico]
+E_fp = E[indice_pico]
 
-for ax, s in zip(axes.flat, valores_s):
+# intervalo angular
+theta = np.linspace(-np.pi/2, np.pi/2, 500)
 
-    D = espalhamento(theta, s, theta0)
+# espalhamento
+s = 4
+theta0 = 0
 
-    # E(f, theta) = E(f) D(theta)
-    E_direcional = E_fp * D
+D = espalhamento(theta, s, theta0)
 
-    ax.plot(theta, E_direcional, linewidth=2)
+# espectro direcional
+E_direcional = E_fp * D
 
-    ax.set_title(
-        f'$s = {s}$',
-        fontsize=13,
-        pad=15
-    )
+# gráfico
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
 
-    # mesma escala para todos os gráficos
-    ax.set_ylim(0, E_fp)
+ax.plot(theta, E_direcional, linewidth=2)
 
-    # direção média
-    ax.plot(
-        [theta0, theta0],
-        [0, E_fp],
-        linestyle='--',
-        linewidth=1
-    )
+ax.set_title(f'E(f, θ) para f = {fp:.3f} Hz')
 
-    ax.grid(True, alpha=0.4)
-
-
-fig.suptitle(
-    f'Espalhamento direcional de $E(f,\\theta)$ para $f_p = {fp:.3f}$ Hz',
-    fontsize=15
-)
-
-plt.tight_layout()
 plt.show()
