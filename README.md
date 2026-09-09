@@ -162,11 +162,41 @@ Por fim, a função é testada utilizando um espectro JONSWAP com $H_s$ e $T_p$ 
 
 ### Exercício 6 — Síntese e análise de ondas
 
-Descrição do exercício e instruções de execução.
+#### Objetivo
+
+Gerar um sinal de elevação da superfície $\eta(t)$ a partir de um espectro JONSWAP com fases aleatórias e, em seguida, estimar novamente o espectro a partir do sinal utilizando o método de Welch.
+
+#### Como funciona
+
+O programa utiliza um espectro JONSWAP e gera um sinal no domínio do tempo por meio da superposição de várias componentes senoidais com fases aleatórias. A partir desse sinal, o espectro é estimado novamente utilizando *scipy.signal.welch*.
+
+Por fim, o espectro estimado é comparado com o espectro JONSWAP original, permitindo verificar se as características espectrais são preservadas durante o processo de síntese e análise. Este exercício completa o ciclo entre o espectro e o sinal no domínio do tempo.
+
+---
 
 ### Exercício 7 — Espalhamento direcional
 
-Descrição do exercício e instruções de execução.
+#### Objetivo
+
+Implementar a equação (21) para representar o espalhamento direcional das ondas e gerar o espectro direcional $E(f,\theta)$.
+
+#### Como funciona
+
+O programa calcula a função de espalhamento direcional
+
+$$ D(\theta)=A(s)\cos^{2s}\left(\frac{\theta-\theta_0}{2}\right), $$
+
+utilizando a normalização adequada para que
+
+$$ \int_0^{2\pi}D(\theta)\,d\theta=1. $$
+
+A partir dela, o espectro direcional é obtido por
+
+$$ E(f,\theta)=E(f)D(\theta), $$
+
+distribuindo a energia do espectro JONSWAP de acordo com a direção de propagação. O gráfico polar é utilizado para visualizar como a energia se concentra em torno da direção média $\theta_0$, de acordo com o parâmetro de espalhamento $s$.
+
+Por fim, a normalização é verificada numericamente, confirmando que a integração de $D(\theta)$ em todas as direções resulta em aproximadamente 1.
 
 ### Exercício 8 — Espectro bimodal
 
