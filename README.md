@@ -126,9 +126,25 @@ $$ cg≈(\omega(k+h)-\omega(k))/h, $$
 
 permitindo comparar o valor teórico com a velocidade medida diretamente no gráfico.
 
+---
+
 ### Exercício 4 — Espectro JONSWAP
 
-Descrição do exercício e instruções de execução.
+### Objetivo
+
+Implementar a fórmula (19) do espectro JONSWAP em Python, utilizando a normalização por $H_s$, e reproduzir a Figura 12. Em seguida, verificar numericamente se $4\sqrt{m_0}$ retorna o valor de $H_s$ definido.
+
+### Como funciona
+
+O programa calcula o espectro JONSWAP para diferentes valores de $\gamma$ e $T_p$, normalizando o espectro para o $H_s$ desejado. Os resultados são apresentados em dois gráficos, permitindo observar a influência desses parâmetros no espectro.
+
+Por fim, o momento espectral $m_0$ é calculado numericamente pela integração do espectro, e a altura significativa é obtida por:
+
+$$ H_s=4√m_0. $$
+
+O valor calculado é então comparado com o $H_s$ utilizado na normalização.
+
+---
 
 ### Exercício 5 — Momentos espectrais
 
