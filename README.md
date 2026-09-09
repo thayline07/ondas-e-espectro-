@@ -148,7 +148,17 @@ O valor calculado é então comparado com o $H_s$ utilizado na normalização.
 
 ### Exercício 5 — Momentos espectrais
 
-Descrição do exercício e instruções de execução.
+#### Objetivo
+
+Implementar uma função para calcular os principais momentos espectrais de um espectro JONSWAP e obter os parâmetros $H_s$, $T_p$, $T_{m01}$ e $T_{m02}$.
+
+#### Como funciona
+
+A função recebe o vetor de frequências $f$ e os valores do espectro $E$, calculando numericamente $m_0$, $m_1$ e $m_2$ por integração pelo método dos trapézios. A partir desses momentos, são calculados os parâmetros do estado do mar.
+
+Por fim, a função é testada utilizando um espectro JONSWAP com $H_s$ e $T_p$ conhecidos, verificando se os valores calculados correspondem aos utilizados na construção do espectro.
+
+---
 
 ### Exercício 6 — Síntese e análise de ondas
 
