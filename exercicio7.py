@@ -24,33 +24,23 @@ def jonswap_normalizado(f, Hs_desejado, Tp, gamma):
     return E_normalizado
 
 
-# -----------------------------
-# Normalização
-# -----------------------------
 def normalizacao(s):
     return gamma(s + 1) / (2 * np.sqrt(np.pi) * gamma(s + 0.5))
 
 
-# -----------------------------
-# Espalhamento direcional
-# -----------------------------
 def espalhamento(theta, s, theta0):
     A = normalizacao(s)
     D = A * np.cos((theta - theta0) / 2)**(2*s)
     return D
 
 
-# -----------------------------
-# Dados
-# -----------------------------
+
 theta = np.linspace(0, 2*np.pi, 1000)
 
 theta0 = 0
 valores_s = [1, 4, 10, 25]
 
-# -----------------------------
-# JONSWAP
-# -----------------------------
+
 f = np.linspace(0.02, 0.30, 200)
 
 Hs = 2.5
